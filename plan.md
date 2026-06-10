@@ -9,7 +9,7 @@ Last updated: 2026-06-10
 
 ## Current status
 
-**Phase 3 complete. Building Phase 4 (pipeline orchestration).**
+**Phase 4 complete. Building Phase 5 (adversarial acceptance, hard gate).**
 
 ## Phase tracker
 
@@ -32,9 +32,10 @@ Legend: [ ] not started, [~] in progress, [x] done, [-] out of scope this sessio
 - [x] **Phase 3 Aggregation.** `aggregate.py` via DuckDB producing the compact table.
   Gate PASSED: test_aggregate.py passes (5 tests) with all four derived columns verified
   against manual arithmetic. See `docs/findings/phase-3.md`.
-- [ ] **Phase 4 Pipeline orchestration.** `pipeline.py` wiring extract, validate,
-  aggregate, writing `analytics.csv`, `quarantine.csv`, `run_manifest.json`. Gate: full
-  run on `data/synthetic` completes, manifest reconciles inputs minus quarantine.
+- [x] **Phase 4 Pipeline orchestration.** `pipeline.py` wiring extract, validate,
+  aggregate, writing `analytics.csv`, `quarantine.csv`, `run_manifest.json`. Gate PASSED:
+  full run on `data/synthetic` (1199 accepted, 1 quarantined), manifest reconciles, plus
+  3 CI-safe pipeline tests. See `docs/findings/phase-4.md`.
 - [ ] **Phase 5 Adversarial acceptance.** `test_acceptance.py` recovers the three seeded
   anomalies with generic rules. Gate: all three recovered within tolerance, else stop.
 - [ ] **Phase 6 Author SKILL.md.** Frontmatter, body, both reference files, report
