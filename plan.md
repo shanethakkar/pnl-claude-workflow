@@ -9,7 +9,12 @@ Last updated: 2026-06-10
 
 ## Current status
 
-**Phase 7 complete (dev side). Building Phase 8 agent portion (package, SOP, demo script).**
+**All agent-buildable phases complete (0 through 7, plus the Phase 8 agent portion).**
+
+What remains is user-owned and cannot be done from Claude Code: install the zip in Cowork,
+run the demo prompt end to end, and record the two-minute walkthrough. The checklist is in
+`docs/DEMO.md`. Deliverable to send interviewers: the repo plus
+`dist/pnl-labor-analysis-v0.1.0.zip`.
 
 ## Phase tracker
 
@@ -46,14 +51,18 @@ Legend: [ ] not started, [~] in progress, [x] done, [-] out of scope this sessio
   the three prompts; ran the Skill directly in Claude Code against the synthetic folder;
   graded against spec section 12 assertions. Gate PASSED (dev side): all five assertions
   pass, report at `evals/sample_report.md`. See `docs/findings/phase-7.md`.
-- [-] **Phase 8 Package, install in Cowork, SOP, demo.** User owns the Cowork install and
-  screen recording. Agent deliverables: zip the Skill folder, write the one-page SOP and
-  the demo script. The live Cowork run and recording are done by the user.
+- [~] **Phase 8 Package, install in Cowork, SOP, demo.** Agent portion COMPLETE:
+  `tools/build_skill.py` + `dist/pnl-labor-analysis-v0.1.0.zip` (verified runs standalone),
+  `docs/SOP.md`, `docs/DEMO.md`, `docs/LIMITATIONS.md`. See `docs/findings/phase-8.md`.
+  Remaining (user-owned): Cowork install, end-to-end demo run, screen recording.
 
 ## Open questions and things that came up
 
-- None blocking right now. New items get added here as they surface, with the resolution
-  recorded in [decisions.md](decisions.md) once decided.
+- sqlite3 egress fallback (ADR-0002) is documented but not implemented in code. It only
+  matters if the Cowork sandbox blocks PyPI so the dependency install fails. If the
+  user's live run hits that, implement the fallback then. Tracked in docs/LIMITATIONS.md.
+- New items get added here as they surface, with the resolution recorded in
+  [decisions.md](decisions.md) once decided.
 
 ## Notes for the next agent
 

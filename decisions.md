@@ -10,6 +10,23 @@ Format per entry: date, decision, why, and (if applicable) the ADR it maps to.
 
 ---
 
+## 2026-06-10 Phase 8 decisions
+
+### Skill zip is versioned in the filename and tracked in the repo
+`tools/build_skill.py` produces `dist/pnl-labor-analysis-v0.1.0.zip`, excluding
+`__pycache__` and compiled files, with `pnl-labor-analysis/` as the top-level folder. The
+zip is committed so it can be downloaded directly from the repo and sent to interviewers.
+Why: the deliverable is a portfolio artifact; a tracked, versioned zip makes install a clean
+re-install on each update (SPEC.md section 13).
+
+### sqlite3 egress fallback documented, not implemented
+ADR-0002's fallback to standard-library sqlite3 (for when a sandbox blocks PyPI) is
+described and listed in LIMITATIONS.md but not yet coded, because the dev environment
+installs the deps cleanly and the only place egress might be blocked is the user's live
+Cowork run.
+Why: avoid building a contingency path that may never be needed; implement it only if the
+live run actually hits blocked egress.
+
 ## 2026-06-10 Phase 2 decisions
 
 ### Skill scripts use flat imports; tests add scripts dir to sys.path
