@@ -9,7 +9,7 @@ Last updated: 2026-06-10
 
 ## Current status
 
-**Phase 2 complete. Building Phase 3 (aggregation).**
+**Phase 3 complete. Building Phase 4 (pipeline orchestration).**
 
 ## Phase tracker
 
@@ -29,9 +29,9 @@ Legend: [ ] not started, [~] in progress, [x] done, [-] out of scope this sessio
   schemas), `extract.py` (pure functions), `validate.py` (accepted rows + quarantine
   reasons). Gate PASSED: test_extract.py and test_validate.py pass (14 tests), malformed
   fixture quarantines with a clear reason. See `docs/findings/phase-2.md`.
-- [ ] **Phase 3 Aggregation.** `aggregate.py` via DuckDB producing the compact table.
-  Gate: `test_aggregate.py` passes on a hand-checked fixture for `labor_pct`,
-  `labor_pct_delta`, `labor_pct_slope`, `labor_pct_z_within_period`.
+- [x] **Phase 3 Aggregation.** `aggregate.py` via DuckDB producing the compact table.
+  Gate PASSED: test_aggregate.py passes (5 tests) with all four derived columns verified
+  against manual arithmetic. See `docs/findings/phase-3.md`.
 - [ ] **Phase 4 Pipeline orchestration.** `pipeline.py` wiring extract, validate,
   aggregate, writing `analytics.csv`, `quarantine.csv`, `run_manifest.json`. Gate: full
   run on `data/synthetic` completes, manifest reconciles inputs minus quarantine.
