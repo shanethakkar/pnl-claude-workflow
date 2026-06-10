@@ -9,7 +9,7 @@ Last updated: 2026-06-10
 
 ## Current status
 
-**Phase 5 complete (hard gate passed). Building Phase 6 (author SKILL.md).**
+**Phase 6 complete. Building Phase 7 (skill triggering and reasoning eval, dev side).**
 
 ## Phase tracker
 
@@ -39,9 +39,9 @@ Legend: [ ] not started, [~] in progress, [x] done, [-] out of scope this sessio
 - [x] **Phase 5 Adversarial acceptance.** `test_acceptance.py` recovers the three seeded
   anomalies with generic rules. Gate PASSED: all three recovered within tolerance (full
   suite 25 tests green). See `docs/findings/phase-5.md`.
-- [ ] **Phase 6 Author SKILL.md.** Frontmatter, body, both reference files, report
-  template, runtime `requirements.txt`. Gate: under 500 lines, description per spec 11.1,
-  references resolve.
+- [x] **Phase 6 Author SKILL.md.** Frontmatter, body, both reference files, report
+  template, runtime `requirements.txt`. Gate PASSED: SKILL.md is 107 lines, description per
+  spec 11.1, references resolve, Skill is self-contained. See `docs/findings/phase-6.md`.
 - [ ] **Phase 7 Skill triggering and reasoning eval (dev side).** `evals/evals.json` with
   the three prompts; run the Skill directly in Claude Code against the synthetic folder;
   grade against spec section 12 assertions. Gate: report recovers all three findings,

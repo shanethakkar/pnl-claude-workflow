@@ -1,0 +1,7 @@
+# Runtime dependencies for the pnl-labor-analysis Skill.
+# The Cowork sandbox installs these with pip on first use.
+# pandera needs the pandas extra (numpy + pandas) for the DataFrameSchema backend.
+click>=8.1
+pandera[pandas]>=0.20
+duckdb>=1.0
+pyarrow>=16.0
