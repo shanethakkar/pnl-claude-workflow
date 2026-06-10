@@ -9,7 +9,7 @@ Last updated: 2026-06-10
 
 ## Current status
 
-**Phase 0 complete. Building Phase 1 (synthetic generator and answer key).**
+**Phase 1 complete. Building Phase 2 (extraction, schema, validation).**
 
 ## Phase tracker
 
@@ -21,9 +21,10 @@ Legend: [ ] not started, [~] in progress, [x] done, [-] out of scope this sessio
 - [x] **Phase 0 Scaffold and decisions.** Directory tree from spec section 4, ADR-0001
   to ADR-0005. Gate PASSED: tree exists, `uv run python -c "import duckdb, pandera, click"`
   succeeds, ADRs present. See `docs/findings/phase-0.md`.
-- [ ] **Phase 1 Synthetic generator and answer key.** `tools/generate.py`, write
-  `data/answer_key.json` from actual seeded values. Gate: 1200 files + 1 malformed file
-  + matching answer key. Spot-check file count and one spike file by hand.
+- [x] **Phase 1 Synthetic generator and answer key.** `tools/generate.py`, write
+  `data/answer_key.json` from actual seeded values. Gate PASSED: 1200 files + 1 malformed
+  file + matching answer key, spike file spot-checked by hand. See
+  `docs/findings/phase-1.md`.
 - [ ] **Phase 2 Extraction, schema, validation.** `schema.py` (raw + tidy pandera
   schemas), `extract.py` (pure functions), `validate.py` (accepted rows + quarantine
   reasons). Gate: `test_extract.py` and `test_validate.py` pass against fixtures.

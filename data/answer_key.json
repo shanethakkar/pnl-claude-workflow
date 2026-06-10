@@ -1,0 +1,23 @@
+{
+  "seed": 42,
+  "spike": {
+    "property_id": "P017",
+    "period": "2025-07",
+    "labor_pct_min": 0.45
+  },
+  "drift_cluster": {
+    "property_ids": [
+      "P040",
+      "P041",
+      "P042",
+      "P043",
+      "P044"
+    ],
+    "slope_min": 0.012
+  },
+  "malformed": {
+    "property_id": "P088",
+    "period": "2025-09",
+    "defect": "missing LABOR subtotal row"
+  }
+}
