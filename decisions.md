@@ -10,6 +10,26 @@ Format per entry: date, decision, why, and (if applicable) the ADR it maps to.
 
 ---
 
+## 2026-06-10 Phase 2 decisions
+
+### Skill scripts use flat imports; tests add scripts dir to sys.path
+The Skill's scripts import each other flatly (`from schema import ...`) rather than as a
+package. In the Cowork sandbox the model runs `pipeline.py` from the scripts directory,
+which Python puts on `sys.path[0]`, so flat imports resolve with zero packaging. To keep
+the Skill self-contained and dependency-free, we do not make it an installable package.
+`tests/conftest.py` adds the scripts directory to `sys.path` so the dev-side tests can
+import the same modules.
+Why: the Skill must zip and run standalone in the sandbox with no install step beyond its
+`requirements.txt`.
+
+### Quarantine reasons are explicit and structural, with pandera as the final guard
+`validate.py` runs explicit structural checks first (missing or unknown or duplicate line
+codes, wrong section, non-positive or non-numeric amounts) so each quarantine reason names
+the specific defect a non-technical user can act on. `TIDY_SCHEMA` runs last as the
+authoritative type guard.
+Why: a finance user needs a readable reason ("missing required line codes: LAB_ADMIN"),
+not a raw schema traceback.
+
 ## 2026-06-10 Setup decisions
 
 ### Project name is "pnl-skill" for now, not LedgerLens

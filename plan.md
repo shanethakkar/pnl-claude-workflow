@@ -9,7 +9,7 @@ Last updated: 2026-06-10
 
 ## Current status
 
-**Phase 1 complete. Building Phase 2 (extraction, schema, validation).**
+**Phase 2 complete. Building Phase 3 (aggregation).**
 
 ## Phase tracker
 
@@ -25,9 +25,10 @@ Legend: [ ] not started, [~] in progress, [x] done, [-] out of scope this sessio
   `data/answer_key.json` from actual seeded values. Gate PASSED: 1200 files + 1 malformed
   file + matching answer key, spike file spot-checked by hand. See
   `docs/findings/phase-1.md`.
-- [ ] **Phase 2 Extraction, schema, validation.** `schema.py` (raw + tidy pandera
+- [x] **Phase 2 Extraction, schema, validation.** `schema.py` (raw + tidy pandera
   schemas), `extract.py` (pure functions), `validate.py` (accepted rows + quarantine
-  reasons). Gate: `test_extract.py` and `test_validate.py` pass against fixtures.
+  reasons). Gate PASSED: test_extract.py and test_validate.py pass (14 tests), malformed
+  fixture quarantines with a clear reason. See `docs/findings/phase-2.md`.
 - [ ] **Phase 3 Aggregation.** `aggregate.py` via DuckDB producing the compact table.
   Gate: `test_aggregate.py` passes on a hand-checked fixture for `labor_pct`,
   `labor_pct_delta`, `labor_pct_slope`, `labor_pct_z_within_period`.
