@@ -9,7 +9,7 @@ Last updated: 2026-06-10
 
 ## Current status
 
-**Phase 4 complete. Building Phase 5 (adversarial acceptance, hard gate).**
+**Phase 5 complete (hard gate passed). Building Phase 6 (author SKILL.md).**
 
 ## Phase tracker
 
@@ -36,8 +36,9 @@ Legend: [ ] not started, [~] in progress, [x] done, [-] out of scope this sessio
   aggregate, writing `analytics.csv`, `quarantine.csv`, `run_manifest.json`. Gate PASSED:
   full run on `data/synthetic` (1199 accepted, 1 quarantined), manifest reconciles, plus
   3 CI-safe pipeline tests. See `docs/findings/phase-4.md`.
-- [ ] **Phase 5 Adversarial acceptance.** `test_acceptance.py` recovers the three seeded
-  anomalies with generic rules. Gate: all three recovered within tolerance, else stop.
+- [x] **Phase 5 Adversarial acceptance.** `test_acceptance.py` recovers the three seeded
+  anomalies with generic rules. Gate PASSED: all three recovered within tolerance (full
+  suite 25 tests green). See `docs/findings/phase-5.md`.
 - [ ] **Phase 6 Author SKILL.md.** Frontmatter, body, both reference files, report
   template, runtime `requirements.txt`. Gate: under 500 lines, description per spec 11.1,
   references resolve.
