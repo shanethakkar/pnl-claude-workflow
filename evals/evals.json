@@ -1,0 +1,26 @@
+{
+  "description": "Skill triggering and reasoning eval (SPEC.md section 12). Each prompt is run against the synthetic folder with the pnl-labor-analysis Skill. The report is graded against the assertions, which are objectively checkable.",
+  "skill": "pnl-labor-analysis",
+  "data_folder": "data/synthetic",
+  "prompts": [
+    {
+      "id": "month-end-review",
+      "prompt": "Here is our month-end folder of property P&Ls at data/synthetic. Which hotels have unusual labor costs this period, and which are trending up over the year?"
+    },
+    {
+      "id": "payroll-cost-review",
+      "prompt": "Run a payroll cost review across the P&L files in data/synthetic. Call out idiosyncrasies across properties and over time."
+    },
+    {
+      "id": "data-problems-first",
+      "prompt": "Analyze the P&Ls in data/synthetic and tell me if any files have data problems before you summarize labor cost."
+    }
+  ],
+  "assertions": [
+    "The report names P017 as a labor spike in 2025-07.",
+    "The report identifies P040 to P044 as an upward labor-cost trend.",
+    "The report lists P088 2025-09 as a quarantined or data-quality issue.",
+    "The report follows the fixed template sections.",
+    "The model invoked pipeline.py and did not read raw CSVs for analysis."
+  ]
+}

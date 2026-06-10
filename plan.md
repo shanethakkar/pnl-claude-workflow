@@ -9,7 +9,7 @@ Last updated: 2026-06-10
 
 ## Current status
 
-**Phase 6 complete. Building Phase 7 (skill triggering and reasoning eval, dev side).**
+**Phase 7 complete (dev side). Building Phase 8 agent portion (package, SOP, demo script).**
 
 ## Phase tracker
 
@@ -42,10 +42,10 @@ Legend: [ ] not started, [~] in progress, [x] done, [-] out of scope this sessio
 - [x] **Phase 6 Author SKILL.md.** Frontmatter, body, both reference files, report
   template, runtime `requirements.txt`. Gate PASSED: SKILL.md is 107 lines, description per
   spec 11.1, references resolve, Skill is self-contained. See `docs/findings/phase-6.md`.
-- [ ] **Phase 7 Skill triggering and reasoning eval (dev side).** `evals/evals.json` with
-  the three prompts; run the Skill directly in Claude Code against the synthetic folder;
-  grade against spec section 12 assertions. Gate: report recovers all three findings,
-  uses the fixed template, invoked `pipeline.py` rather than reading raw CSVs.
+- [x] **Phase 7 Skill triggering and reasoning eval (dev side).** `evals/evals.json` with
+  the three prompts; ran the Skill directly in Claude Code against the synthetic folder;
+  graded against spec section 12 assertions. Gate PASSED (dev side): all five assertions
+  pass, report at `evals/sample_report.md`. See `docs/findings/phase-7.md`.
 - [-] **Phase 8 Package, install in Cowork, SOP, demo.** User owns the Cowork install and
   screen recording. Agent deliverables: zip the Skill folder, write the one-page SOP and
   the demo script. The live Cowork run and recording are done by the user.
