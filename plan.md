@@ -9,10 +9,7 @@ Last updated: 2026-06-10
 
 ## Current status
 
-**Setup complete, awaiting go-ahead to build phases 0 to 7 (dev side).**
-
-Environment is verified and the repo is wired to GitHub. The next action is to begin
-Phase 0 once the user confirms.
+**Phase 0 complete. Building Phase 1 (synthetic generator and answer key).**
 
 ## Phase tracker
 
@@ -21,9 +18,9 @@ Legend: [ ] not started, [~] in progress, [x] done, [-] out of scope this sessio
 - [x] **Setup** Tooling and access checks. uv + Python 3.12 verified, all core deps
   install and import, git initialized, remote set, push access confirmed, living docs
   created.
-- [ ] **Phase 0 Scaffold and decisions.** Directory tree from spec section 4, ADR-0001
-  to ADR-0005. Gate: tree exists, `uv run python -c "import duckdb, pandera, click"`
-  succeeds, ADRs present.
+- [x] **Phase 0 Scaffold and decisions.** Directory tree from spec section 4, ADR-0001
+  to ADR-0005. Gate PASSED: tree exists, `uv run python -c "import duckdb, pandera, click"`
+  succeeds, ADRs present. See `docs/findings/phase-0.md`.
 - [ ] **Phase 1 Synthetic generator and answer key.** `tools/generate.py`, write
   `data/answer_key.json` from actual seeded values. Gate: 1200 files + 1 malformed file
   + matching answer key. Spot-check file count and one spike file by hand.
