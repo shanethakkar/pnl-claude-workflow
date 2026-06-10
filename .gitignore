@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# uv / virtualenv
+.venv/
+
+# Generated synthetic data (regenerate with tools/generate.py)
+data/synthetic/
+
+# Pipeline run outputs
+_pnl_output/
+**/_pnl_output/
+
+# OS
+.DS_Store
+Thumbs.db
